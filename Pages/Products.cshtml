@@ -1,0 +1,22 @@
+﻿@page
+@model GameQuest.Pages.ProductsModel
+@{
+}
+
+
+<div class="d-flex flex-row">
+
+    @foreach (var product in Model.Products)
+    {
+        <div class="card p-2" style="width: 18rem;">
+            <img src="@product.ImgUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.Description</p>
+                <span>@product.Price</span>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    }
+
+</div>
