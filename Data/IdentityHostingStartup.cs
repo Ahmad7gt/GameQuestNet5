@@ -15,9 +15,12 @@ namespace GameQuest.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<Context>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("ContextConnection")));
+                services.AddDbContext<Context>(options => {
+
+                    options.UseSqlServer(context.Configuration.GetConnectionString("ContextConnection"));
+                    options.EnableSensitiveDataLogging(true);
+
+                });
 
                 services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<Context>();

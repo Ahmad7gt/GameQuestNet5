@@ -1,6 +1,9 @@
-﻿namespace GameQuest.Data
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GameQuest.Data
 {
-    public class Product : BaseEntity
+    public class Product  :BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -8,6 +11,8 @@
         public double Price { get; set; }
         public double Sale { get; set; }
         public bool IsVisible { get; set; }
+
+        public Guid CategoryId { get; set; }
 
         public Product()
         {
