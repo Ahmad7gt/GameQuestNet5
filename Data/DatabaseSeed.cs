@@ -51,20 +51,26 @@ namespace GameQuest.Data
             Category playstationGames = new Category(playstation, games);
             Category xboxGames = new Category(xbox, games);
             Category pcGames = new Category(pc, games);
+            Category nintentoControllers = new Category(nintendo, controllers);
+            Category playstationControllers = new Category(playstation, controllers);
+            Category xboxAccesories = new Category(xbox, accesories);
+            Category pcAccesories = new Category(pc, accesories);
 
             builder.Entity<Category>().HasData(nintentoGames);
             builder.Entity<Category>().HasData(playstationGames);
             builder.Entity<Category>().HasData(xboxGames);
             builder.Entity<Category>().HasData(pcGames);
+            builder.Entity<Category>().HasData(nintentoControllers);
+            builder.Entity<Category>().HasData(playstationControllers);
+            builder.Entity<Category>().HasData(xboxAccesories);
+            builder.Entity<Category>().HasData(pcAccesories);
 
-             
+
 
             // Create content pages
             builder.Entity<Content>().HasData(new Content("About", ToolBox.ContentBodyDemo));
             builder.Entity<Content>().HasData(new Content("FAQ", ToolBox.ContentBodyDemo));
             builder.Entity<Content>().HasData(new Content("Contact", ToolBox.ContentBodyDemo, "https://puppypetdog.com/wp-content/uploads/2019/11/contact-header-image.jpg"));
-
-            
 
             // Create products
             builder.Entity<Product>().HasData(new Product
@@ -105,6 +111,18 @@ namespace GameQuest.Data
                 ImgUrl = "https://s3.gaming-cdn.com/images/products/7589/271x377/f1-2020-cover.jpg",
                 Price = 599.0,
                 CategoryId = pcGames.Id
+
+
+            });
+
+
+            builder.Entity<Product>().HasData(new Product
+            {
+                Name = "Xbox Controller",
+                Description = "The Xbox controller is the primary game controller for Microsoft's Xbox home video game console and was introduced at the Game Developers Conference in 2000. ",
+                ImgUrl = "https://www.geeky-gadgets.com/wp-content/uploads/2018/08/Wireless-Controller-Grey-Blue-2.jpg",
+                Price = 599.0,
+                CategoryId = xboxAccesories.Id
 
 
             });

@@ -1,11 +1,13 @@
-﻿@page
+﻿@page "{mainCat?}/{subCat?}"
+
 @model GameQuest.Pages.ProductsModel
 @{
 }
 
 
-<div class="d-flex flex-row">
+@ViewData["x"]
 
+<div class="d-flex flex-row">
     @foreach (var product in Model.Products)
     {
         <div class="card p-2" style="width: 18rem;">
@@ -18,5 +20,5 @@
             </div>
         </div>
     }
-
+    <h1>@ViewData["message"]</h1>
 </div>

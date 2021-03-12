@@ -12,7 +12,10 @@ namespace GameQuest.Data
         public double Sale { get; set; }
         public bool IsVisible { get; set; }
 
+        [ForeignKey("Id")]
         public Guid CategoryId { get; set; }
+
+        public Category Category { get; set; }
 
         public Product()
         {

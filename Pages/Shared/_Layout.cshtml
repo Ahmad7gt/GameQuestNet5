@@ -31,15 +31,42 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products">Products</a>
+                            <a  id="categoryTrigger" class="nav-link text-dark" asp-area="" asp-page="/Products">Products</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
+        <div id="categoryNav" class="categoryClosed">
+            <div class="row">
+
+                @foreach (var cat in navService.GetCategories())
+                {
+
+                    <div class="col-3">
+                        <a href="/products/@cat.MainName.ToLower()" class="nav-link text-capitalize text-light">@cat.MainName</a>
+
+                        @foreach (var sub in cat.SubCategories)
+                        {
+                            <a href="/products/@cat.MainName.ToLower()/@sub.ToLower()" class="nav-link text-light text-lightgrey">@sub</a>
+                        }
+
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContainer" class="container">
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

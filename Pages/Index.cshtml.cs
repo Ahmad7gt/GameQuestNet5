@@ -18,10 +18,12 @@ namespace GameQuest.Pages
             _logger = logger;
         }
 
-        public ActionResult OnGet()
+        public void OnGet()
         {
             // VOID and no return to fix
-            return Redirect("/products");
+            //return Redirect("/products");
+
+
         }
     }
 }
