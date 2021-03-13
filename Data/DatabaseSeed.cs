@@ -79,7 +79,9 @@ namespace GameQuest.Data
                 Description = "Halo: Combat Evolved, simply known as Halo, is a first-person shooter video game developed by Bungie and published by Microsoft Game Studios. It was released as a launch title for Microsoft's Xbox video game console on November 15, 2001. Microsoft released versions of the game for Windows and Mac OS X in 2003.",
                 ImgUrl = "https://halo.wiki.gallery/images/6/6a/Halo_Combat_Evolved_cover.png",
                 Price = 599.0,
-                CategoryId = xboxGames.Id
+                CategoryId = xboxGames.Id,
+               
+                
 
             });
 
@@ -99,8 +101,8 @@ namespace GameQuest.Data
                 Description = "Fable is a series of action role-playing video games for Xbox, Microsoft Windows, macOS, Xbox 360 and Xbox One platforms. The series was developed by Lionhead Studios until the studio was closed in 2016, and is published by Xbox Game Studios",
                 ImgUrl = "https://upload.wikimedia.org/wikipedia/en/5/5b/Fablebox.jpg",
                 Price = 599.0,
-                CategoryId = xboxGames.Id
-
+                CategoryId = xboxGames.Id,
+                Deals = true
 
             });
 
@@ -110,7 +112,8 @@ namespace GameQuest.Data
                 Description = "F1 2020 is the official video game of the 2020 Formula 1 and Formula 2 Championships developed and published by Codemasters.",
                 ImgUrl = "https://s3.gaming-cdn.com/images/products/7589/271x377/f1-2020-cover.jpg",
                 Price = 599.0,
-                CategoryId = pcGames.Id
+                CategoryId = pcGames.Id,
+                Deals = true
 
 
             });
@@ -122,7 +125,9 @@ namespace GameQuest.Data
                 Description = "The Xbox controller is the primary game controller for Microsoft's Xbox home video game console and was introduced at the Game Developers Conference in 2000. ",
                 ImgUrl = "https://www.geeky-gadgets.com/wp-content/uploads/2018/08/Wireless-Controller-Grey-Blue-2.jpg",
                 Price = 599.0,
-                CategoryId = xboxAccesories.Id
+                CategoryId = xboxAccesories.Id,
+                Deals = true
+
 
 
             });

@@ -17,3 +17,6 @@ $('#mainContainer').hover(function () {
     $('#categoryNav').removeClass('categoryOpen')
 
 })
+
+
+$('.carousel').carousel()

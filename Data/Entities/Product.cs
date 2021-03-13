@@ -17,6 +17,8 @@ namespace GameQuest.Data
 
         public Category Category { get; set; }
 
+        public bool Deals { get; set; }
+
         public Product()
         {
             Name = string.Empty;
@@ -25,6 +27,8 @@ namespace GameQuest.Data
             Price = 0.0;
             Sale = 0.0;
             IsVisible = false;
+            Deals = false;
+            
         }
 
     }
