@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameQuest.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210312141021_int6")]
-    partial class int6
+    [Migration("20210314145347_int1")]
+    partial class int1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,59 +47,59 @@ namespace GameQuest.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1470b870-fb8b-4467-bcd8-fb2444d4a4f2"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(8555),
-                            MainCategoryId = new Guid("0d7d232b-97dc-4003-8f4d-dde4b2a6f010"),
-                            SubCategoryId = new Guid("dc2dadac-8c3a-44e3-a12d-eae1cb5d6394")
+                            Id = new Guid("51446344-4323-40c8-80c7-3d580b0526fd"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(1073),
+                            MainCategoryId = new Guid("b32fe870-83e0-4879-9a5b-3cf2abf75d74"),
+                            SubCategoryId = new Guid("c04c262d-96ac-4fa9-88a1-084ec9c30a1a")
                         },
                         new
                         {
-                            Id = new Guid("fd5158e4-6379-483b-b7c4-310933c281bb"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9899),
-                            MainCategoryId = new Guid("8ac7c9f7-fbba-4ba6-920a-3a6886b3ef7c"),
-                            SubCategoryId = new Guid("dc2dadac-8c3a-44e3-a12d-eae1cb5d6394")
+                            Id = new Guid("8fd0698f-2831-4776-b53f-b72b1ec7815c"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2266),
+                            MainCategoryId = new Guid("34eeae3e-78dc-4111-b820-cefa6118f8f0"),
+                            SubCategoryId = new Guid("c04c262d-96ac-4fa9-88a1-084ec9c30a1a")
                         },
                         new
                         {
-                            Id = new Guid("e7f44a2a-2ed8-48a1-9a96-000e13648f0a"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9911),
-                            MainCategoryId = new Guid("27720af0-9eae-4cd9-9260-fc94d98b2f77"),
-                            SubCategoryId = new Guid("dc2dadac-8c3a-44e3-a12d-eae1cb5d6394")
+                            Id = new Guid("90a8d4e1-d334-4807-ae99-629068f9a8df"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2278),
+                            MainCategoryId = new Guid("ffb4e837-622e-4c9a-b018-64426dd09400"),
+                            SubCategoryId = new Guid("c04c262d-96ac-4fa9-88a1-084ec9c30a1a")
                         },
                         new
                         {
-                            Id = new Guid("f3630695-a3c4-41cc-ae90-fff08d9265e9"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9914),
-                            MainCategoryId = new Guid("fa81d120-385a-4eef-b36b-f4753af085e9"),
-                            SubCategoryId = new Guid("dc2dadac-8c3a-44e3-a12d-eae1cb5d6394")
+                            Id = new Guid("967c8298-7f7e-4e25-8259-f54ef935d214"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2281),
+                            MainCategoryId = new Guid("92797023-b662-4bb5-849f-c4a5a2ba833d"),
+                            SubCategoryId = new Guid("c04c262d-96ac-4fa9-88a1-084ec9c30a1a")
                         },
                         new
                         {
-                            Id = new Guid("6e96142e-4e35-48a2-9038-460376af3741"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9917),
-                            MainCategoryId = new Guid("0d7d232b-97dc-4003-8f4d-dde4b2a6f010"),
-                            SubCategoryId = new Guid("04ec2bd1-cbe2-4866-bad7-0a4591e19c09")
+                            Id = new Guid("3f9c8641-16c1-41c3-9ab2-0e727ff2bed1"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2289),
+                            MainCategoryId = new Guid("b32fe870-83e0-4879-9a5b-3cf2abf75d74"),
+                            SubCategoryId = new Guid("8f74fc9e-aa47-4250-9b5e-5faf1284f133")
                         },
                         new
                         {
-                            Id = new Guid("4cd8725e-7f7f-47a1-a4cc-767cd6900ae0"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9920),
-                            MainCategoryId = new Guid("8ac7c9f7-fbba-4ba6-920a-3a6886b3ef7c"),
-                            SubCategoryId = new Guid("04ec2bd1-cbe2-4866-bad7-0a4591e19c09")
+                            Id = new Guid("08aebf6b-7ac9-4666-b92e-bca30d1ca0f1"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2292),
+                            MainCategoryId = new Guid("34eeae3e-78dc-4111-b820-cefa6118f8f0"),
+                            SubCategoryId = new Guid("8f74fc9e-aa47-4250-9b5e-5faf1284f133")
                         },
                         new
                         {
-                            Id = new Guid("714379a9-ffb9-4126-9e4a-8d1a0011e226"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9923),
-                            MainCategoryId = new Guid("27720af0-9eae-4cd9-9260-fc94d98b2f77"),
-                            SubCategoryId = new Guid("3800ba5b-ea51-4372-a93f-10a7fabdd64e")
+                            Id = new Guid("eaabcbfd-6f9d-4abc-95fa-08d9c5031c99"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2295),
+                            MainCategoryId = new Guid("ffb4e837-622e-4c9a-b018-64426dd09400"),
+                            SubCategoryId = new Guid("342560a6-9136-44db-bdcc-c338164fa938")
                         },
                         new
                         {
-                            Id = new Guid("960b8445-a9be-478b-a37f-92cdc7933df0"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(9925),
-                            MainCategoryId = new Guid("fa81d120-385a-4eef-b36b-f4753af085e9"),
-                            SubCategoryId = new Guid("3800ba5b-ea51-4372-a93f-10a7fabdd64e")
+                            Id = new Guid("c2be047c-efea-4e0f-aca0-41f56077623d"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(2298),
+                            MainCategoryId = new Guid("92797023-b662-4bb5-849f-c4a5a2ba833d"),
+                            SubCategoryId = new Guid("342560a6-9136-44db-bdcc-c338164fa938")
                         });
                 });
 
@@ -134,9 +134,9 @@ namespace GameQuest.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bda58cce-b941-403f-a393-282ec49067dc"),
+                            Id = new Guid("641a211d-d2b7-495e-92e7-ab5e188d279e"),
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.",
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(1302),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(3566),
                             ImageUrl = "",
                             IsInMenu = false,
                             IsPublished = false,
@@ -144,9 +144,9 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e48674f8-f968-457e-9104-ea6ada8c6ed5"),
+                            Id = new Guid("eccd586c-af59-428a-94eb-b7eac85fc380"),
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.",
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(3079),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(5264),
                             ImageUrl = "",
                             IsInMenu = false,
                             IsPublished = false,
@@ -154,9 +154,9 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("db4b4435-40fd-4587-a5a8-486b5add9bcc"),
+                            Id = new Guid("252da2a9-6e17-4fba-9850-2ab38bb97ba4"),
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.",
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(3110),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(5295),
                             ImageUrl = "https://puppypetdog.com/wp-content/uploads/2019/11/contact-header-image.jpg",
                             IsInMenu = false,
                             IsPublished = false,
@@ -186,29 +186,29 @@ namespace GameQuest.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0d7d232b-97dc-4003-8f4d-dde4b2a6f010"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 819, DateTimeKind.Local).AddTicks(9551),
+                            Id = new Guid("b32fe870-83e0-4879-9a5b-3cf2abf75d74"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 182, DateTimeKind.Local).AddTicks(2014),
                             Description = "",
                             Name = "Nintendo"
                         },
                         new
                         {
-                            Id = new Guid("8ac7c9f7-fbba-4ba6-920a-3a6886b3ef7c"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 821, DateTimeKind.Local).AddTicks(7446),
+                            Id = new Guid("34eeae3e-78dc-4111-b820-cefa6118f8f0"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 184, DateTimeKind.Local).AddTicks(234),
                             Description = "",
                             Name = "Playstation"
                         },
                         new
                         {
-                            Id = new Guid("27720af0-9eae-4cd9-9260-fc94d98b2f77"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 821, DateTimeKind.Local).AddTicks(7473),
+                            Id = new Guid("ffb4e837-622e-4c9a-b018-64426dd09400"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 184, DateTimeKind.Local).AddTicks(261),
                             Description = "",
                             Name = "Xbox"
                         },
                         new
                         {
-                            Id = new Guid("fa81d120-385a-4eef-b36b-f4753af085e9"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 821, DateTimeKind.Local).AddTicks(7477),
+                            Id = new Guid("92797023-b662-4bb5-849f-c4a5a2ba833d"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 184, DateTimeKind.Local).AddTicks(266),
                             Description = "",
                             Name = "PC"
                         });
@@ -286,10 +286,10 @@ namespace GameQuest.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7a48e9f1-853c-4b53-8ca2-11a37907f81a"),
-                            CategoryId = new Guid("e7f44a2a-2ed8-48a1-9a96-000e13648f0a"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(3920),
-                            Deals = true,
+                            Id = new Guid("907114e6-9c5a-4817-a884-0ee8bdddb525"),
+                            CategoryId = new Guid("90a8d4e1-d334-4807-ae99-629068f9a8df"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(6042),
+                            Deals = false,
                             Description = "Halo: Combat Evolved, simply known as Halo, is a first-person shooter video game developed by Bungie and published by Microsoft Game Studios. It was released as a launch title for Microsoft's Xbox video game console on November 15, 2001. Microsoft released versions of the game for Windows and Mac OS X in 2003.",
                             ImgUrl = "https://halo.wiki.gallery/images/6/6a/Halo_Combat_Evolved_cover.png",
                             IsVisible = false,
@@ -299,9 +299,9 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("de340954-5ab9-4423-ad8a-0e5b8a4a452a"),
-                            CategoryId = new Guid("f3630695-a3c4-41cc-ae90-fff08d9265e9"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(6590),
+                            Id = new Guid("d2468468-38e9-44bc-bcfd-1828dae8da3f"),
+                            CategoryId = new Guid("967c8298-7f7e-4e25-8259-f54ef935d214"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(8739),
                             Deals = false,
                             Description = "Counter-Strike: Global Offensive is a multiplayer first-person shooter video game developed by Valve and Hidden Path Entertainment. It is the fourth game in the Counter-Strike series and was released for Windows, macOS, Xbox 360, and PlayStation 3 in August 2012, while the Linux version was released in 2014.",
                             ImgUrl = "https://static.wikia.nocookie.net/cswikia/images/1/1e/Csgo_steam_store_header_latest.jpg",
@@ -312,9 +312,9 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9033d6ec-db4c-4198-8fd6-8574d6afe4ef"),
-                            CategoryId = new Guid("e7f44a2a-2ed8-48a1-9a96-000e13648f0a"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(6626),
+                            Id = new Guid("59cf2c3f-e9ee-46b9-bf7d-b68a0236f515"),
+                            CategoryId = new Guid("90a8d4e1-d334-4807-ae99-629068f9a8df"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(8778),
                             Deals = true,
                             Description = "Fable is a series of action role-playing video games for Xbox, Microsoft Windows, macOS, Xbox 360 and Xbox One platforms. The series was developed by Lionhead Studios until the studio was closed in 2016, and is published by Xbox Game Studios",
                             ImgUrl = "https://upload.wikimedia.org/wikipedia/en/5/5b/Fablebox.jpg",
@@ -325,10 +325,10 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6247f1d6-564a-4732-9fe0-c276a95b8845"),
-                            CategoryId = new Guid("f3630695-a3c4-41cc-ae90-fff08d9265e9"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(6646),
-                            Deals = false,
+                            Id = new Guid("2df02b2c-6b73-4873-88d3-f0ba9099a38d"),
+                            CategoryId = new Guid("967c8298-7f7e-4e25-8259-f54ef935d214"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(8798),
+                            Deals = true,
                             Description = "F1 2020 is the official video game of the 2020 Formula 1 and Formula 2 Championships developed and published by Codemasters.",
                             ImgUrl = "https://s3.gaming-cdn.com/images/products/7589/271x377/f1-2020-cover.jpg",
                             IsVisible = false,
@@ -338,10 +338,10 @@ namespace GameQuest.Migrations
                         },
                         new
                         {
-                            Id = new Guid("869afc48-df9d-434e-b238-32e98748e693"),
-                            CategoryId = new Guid("714379a9-ffb9-4126-9e4a-8d1a0011e226"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 823, DateTimeKind.Local).AddTicks(6666),
-                            Deals = false,
+                            Id = new Guid("c282e533-9c7f-4c16-8e51-15869a490afe"),
+                            CategoryId = new Guid("eaabcbfd-6f9d-4abc-95fa-08d9c5031c99"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(8816),
+                            Deals = true,
                             Description = "The Xbox controller is the primary game controller for Microsoft's Xbox home video game console and was introduced at the Game Developers Conference in 2000. ",
                             ImgUrl = "https://www.geeky-gadgets.com/wp-content/uploads/2018/08/Wireless-Controller-Grey-Blue-2.jpg",
                             IsVisible = false,
@@ -373,29 +373,29 @@ namespace GameQuest.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dc2dadac-8c3a-44e3-a12d-eae1cb5d6394"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(6796),
+                            Id = new Guid("c04c262d-96ac-4fa9-88a1-084ec9c30a1a"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 184, DateTimeKind.Local).AddTicks(9301),
                             Description = "",
                             Name = "Games"
                         },
                         new
                         {
-                            Id = new Guid("3800ba5b-ea51-4372-a93f-10a7fabdd64e"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(7576),
+                            Id = new Guid("342560a6-9136-44db-bdcc-c338164fa938"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(94),
                             Description = "",
                             Name = "Accesories"
                         },
                         new
                         {
-                            Id = new Guid("04ec2bd1-cbe2-4866-bad7-0a4591e19c09"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(7588),
+                            Id = new Guid("8f74fc9e-aa47-4250-9b5e-5faf1284f133"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(106),
                             Description = "",
                             Name = "Controllers"
                         },
                         new
                         {
-                            Id = new Guid("84633f37-2410-43a4-a4e4-909f246544f7"),
-                            Created = new DateTime(2021, 3, 12, 15, 10, 20, 822, DateTimeKind.Local).AddTicks(7591),
+                            Id = new Guid("b899977c-5327-4b64-a533-622216ee8ff3"),
+                            Created = new DateTime(2021, 3, 14, 15, 53, 47, 185, DateTimeKind.Local).AddTicks(109),
                             Description = "",
                             Name = "Console"
                         });

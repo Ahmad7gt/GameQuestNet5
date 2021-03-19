@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GameQuest</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/1c6697c76d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body class ="layoutBackgrrundColor">
+<body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 navColor ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
             <div class="container navColor">
                 <a class="navbar-brand navWordsColor" asp-area="" asp-page="/Index">GameQuest</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -33,10 +35,34 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a  id="categoryTrigger" class="nav-link navWordsColor" asp-area="" asp-page="/Products">Products</a>
+                            <a id="categoryTrigger" class="nav-link navWordsColor" href="/Products">Products</a>
                         </li>
 
                     </ul>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a id="categoryTrigger" class="nav-link navWordsColor" href="/account/login">Login</a>
+                                <a id="categoryTrigger" class="nav-link navWordsColor" href="/account/register">Register</a>
+                            }
+                            else
+                            {
+                                @*<i class="fas fa-user-circle">,@User.Identity.</i>*@
+
+                                <a class="nav-link text-dark">Hello, @User.Identity.Name</a>
+
+                                <a class="nav-link text-dark" href="/account/logout">Sign out</a>
+                            }
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -46,19 +72,17 @@
         <div id="categoryNav" class="categoryClosed ">
             <div class="row">
 
-                @foreach (var cat in navService.GetCategories())
+                @foreach (var cat in navService.GetCategory())
                 {
-
                     <div class="col-3">
-                        <a href="/products/@cat.MainName.ToLower()" class="nav-link text-capitalize text-light navWordsColor">@cat.MainName</a>
+                        <a href="/products/@cat.MainName.ToLower()" class="nav-link text-capitalize mainCategoryTitle">@cat.MainName</a>
 
                         @foreach (var sub in cat.SubCategories)
                         {
-                            <a href="/products/@cat.MainName.ToLower()/@sub.ToLower()" class="nav-link text-light text-lightgrey navWordsColor">@sub</a>
+                            <a href="/products/@cat.MainName.ToLower()/@sub.ToLower()" class="nav-link subCategoryTitle">@sub</a>
                         }
 
                     </div>
-
                 }
 
             </div>
@@ -72,7 +96,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted navFoot">
+    <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - GameQuest - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>

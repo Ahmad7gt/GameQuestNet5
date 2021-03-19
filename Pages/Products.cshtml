@@ -1,24 +1,71 @@
 ﻿@page "{mainCat?}/{subCat?}"
 
 @model GameQuest.Pages.ProductsModel
-@{
-}
-
 
 @ViewData["x"]
 
-<div class="d-flex flex-row">
-    @foreach (var product in Model.Products)
-    {
-        <div class="card p-2" style="width: 18rem;">
-            <img src="@product.ImgUrl" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@product.Name</h5>
-                <p class="card-text">@product.Description</p>
-                <span>@product.Price</span>
-                <a href="#" class="btn btn-primary">Add to cart</a>
+@{
+
+
+    int maxLenght = 150;
+
+    <div class="row">
+
+        @if (!Model.isEmpty)
+        {
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-sm-12 col-md-6 col-lg-3 col-bottom-pad">
+                    <div class="card p-2">
+                        <div style="background-image: url(@product.ImgUrl);" class="productImageContainer blur">
+
+                        </div>
+
+                        <div style="background-image: url(@product.ImgUrl);" class="mainImageContainer">
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description.Substring(0, product.Description.Length < maxLenght ? product.Description.Length : maxLenght)@(product.Description.Length > maxLenght ? "..." : string.Empty)</p>
+                            <span>@product.Price</span>
+                            <a href="#" class="btn btn-orange">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-sm-12 col-md-6 col-lg-3 col-center">
+                <div class="card p-2">
+                    <div style="background-image: url('https://popularresistance-uploads.s3.amazonaws.com/uploads/2013/11/Obama-sad-face-Credit-Reuters-Kevin-Lamarque.jpg');" class="productImageContainer blur">
+
+                    </div>
+
+                    <div style="background-image: url('https://popularresistance-uploads.s3.amazonaws.com/uploads/2013/11/Obama-sad-face-Credit-Reuters-Kevin-Lamarque.jpg');" class="mainImageContainer">
+
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Sorry!</h5>
+                        <p class="card-text">We seem to be out of stock! Check back later</p>
+                        <a href="javascript:history.back()" class="btn btn-orange">Go back!</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    }
-    <h1>@ViewData["message"]</h1>
-</div>
+
+        }
+
+
+
+
+
+        <h1>@ViewData["message"]</h1>
+
+    </div>
+
+
+
+}
+

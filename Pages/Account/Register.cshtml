@@ -1,0 +1,20 @@
+﻿@page
+@model GameQuest.Pages.Account.RegisterModel
+@{
+}
+
+
+
+<form asp-page-handler="RegisterAccount" method="post">
+
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="confirmPassword" placeholder="Confrim password" />
+
+    <input type="checkbox" name="rememberMe" placeholder="RememberME" value="RememberMe">
+
+
+    <button class="btn btn-orange">Create Account</button>
+    <br />
+    @ViewData["message"]
+</form>

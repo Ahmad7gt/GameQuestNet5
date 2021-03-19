@@ -1,6 +1,10 @@
+using GameQuest.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +30,18 @@ namespace GameQuest
             services.AddRazorPages();
             services.AddScoped<NavigationService>();
 
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "GameQuestCookie";
+                options.LoginPath = $"/account/login";
+                options.LogoutPath = $"/account/logout";
+                options.AccessDeniedPath = $"/account/access-denied";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+                options.Cookie.SameSite = SameSiteMode.None;
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,10 +58,18 @@ namespace GameQuest
                 app.UseHsts();
             }
 
+            app.UseCookiePolicy(new CookiePolicyOptions
+            { 
+                Secure = CookieSecurePolicy.Always
+            });
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -80,8 +80,6 @@ namespace GameQuest.Data
                 ImgUrl = "https://halo.wiki.gallery/images/6/6a/Halo_Combat_Evolved_cover.png",
                 Price = 599.0,
                 CategoryId = xboxGames.Id,
-               
-                
 
             });
 

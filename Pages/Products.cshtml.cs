@@ -16,6 +16,8 @@ namespace GameQuest.Pages
         [BindProperty]
         public List<Product> Products { get; set; }
 
+        public bool isEmpty = false;
+
         public ProductsModel(Context context)
         {
             _context = context;
@@ -45,11 +47,11 @@ namespace GameQuest.Pages
 
             if (!Products.Any())
             {
-                ViewData["message"] = "Sorry, we are out of stock!";
+                isEmpty = true;
             }
             else
             {
-                ViewData["message"] = string.Empty;
+                isEmpty = false;
             }
         }
 

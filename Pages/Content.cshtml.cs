@@ -12,17 +12,20 @@ namespace GameQuest.Pages
 {
     public class ContentModel : Microsoft.AspNetCore.Mvc.RazorPages.PageModel
     {
+        public static IServiceProvider serviceProvider { get; }
+
         private Context _context;
 
         public ContentPageModel _contentModel;
-        public ContentModel(Context context, ContentPageModel contentModel)
+        public ContentModel(Context context)
         {
             _context = context;
-            _contentModel = contentModel;
+            _contentModel = new ContentPageModel();
         }
 
         public void OnGet(string pageName)
         {
+
             if (pageName is not null)
             {
                 // Get the current content named in "page string" from database using the title as a find atribute.
