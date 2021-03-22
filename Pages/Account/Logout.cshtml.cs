@@ -35,6 +35,8 @@ namespace GameQuest.Pages.Account
 
             await _signInManager.SignOutAsync();
 
+            
+
             //HttpContext.Session.Clear();
 
         }
