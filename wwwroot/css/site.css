@@ -26,6 +26,8 @@ body {
     background-color: var(--lightColor);
     color: var(--darkColor) !important;
     margin-bottom: 50px;
+
+   /* direction: rtl !important;*/
 }
 
 nav {
@@ -99,7 +101,7 @@ footer a {
     height: 250px;
 
     position: static;
-    z-index: 999999;
+    z-index: 1;
 
     margin-top: -250px;
 
@@ -123,7 +125,7 @@ footer a {
     font-size: 3rem;
 }
 
-/* Form Layour*/
+/* Form Layout*/
 .formContainer {
     margin-top: 50px;
     background-color: var(--formBackground);
@@ -135,17 +137,21 @@ footer a {
 }
 
     .formContainer input[type=text], input[type=password] {
-        border-radius: 5px;
-
+        border-radius: 0px;
         animation: slideInDown;
         animation-duration: 1s;
-        border: 2px solid #fff;
+        border: none;
+        border-bottom: 2px solid var(--lightColor) !important;
         font-size: 1.2rem !important;
     }
-    
+
 
     .formContainer input {
-
+        border-radius: 0px;
+        animation: slideInDown;
+        animation-duration: 1s;
+        border: none;
+        border-bottom: 2px solid var(--lightColor) !important;
         font-size: 1.2rem !important;
     }
 
@@ -178,6 +184,13 @@ footer a {
 }
 
 
+.userGreeting a {
+    color: var(--lightGreyColor) !important;
+    font-size: 0.8rem;
+}
+.userGreeting a:hover {
+    color: var(--lightGreyColor) !important;
+}
 /* OTHER STUFF */
 a.navbar-brand {
     white-space: normal;
@@ -276,8 +289,6 @@ button.accept-policy {
 
     padding-top: 30px;
 }
-
-
 
 .categoryOpen a:hover {
     color: var(--orangeColor) !important;

@@ -19,7 +19,7 @@ namespace GameQuest.Pages.Account
             _signInManager = signInManager;
         }
 
-        public async void OnGet()
+        public async Task<IActionResult> OnGet()
         {
 
             // Sign out user
@@ -35,9 +35,8 @@ namespace GameQuest.Pages.Account
 
             await _signInManager.SignOutAsync();
 
-            
+            return LocalRedirect("/");
 
-            //HttpContext.Session.Clear();
 
         }
 

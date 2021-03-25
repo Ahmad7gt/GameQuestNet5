@@ -22,6 +22,31 @@ namespace GameQuest.Data
             builder.Entity<IdentityRole>().ToTable("Roles");
 
 
+            builder.Entity<IdentityRole>().HasData(new IdentityRole 
+            { 
+                Id = Guid.NewGuid().ToString(),
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+
+            });
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Customer",
+                NormalizedName = "CUSTOMER"
+
+            });
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "User",
+                NormalizedName = "USER"
+
+            });
+
+
             // Create Main Categories
             MainCategory nintendo = new MainCategory("Nintendo", "");
             MainCategory playstation = new MainCategory("Playstation", "");

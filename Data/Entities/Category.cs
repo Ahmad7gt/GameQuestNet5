@@ -22,6 +22,12 @@ namespace GameQuest.Data
             SubCategoryId = sub.Id;
         }
 
+        public Category(string main, string sub)
+        {
+            MainCategoryId = new Guid(main);
+            SubCategoryId = new Guid(sub);
+        }
+
         public Category()
         {
 

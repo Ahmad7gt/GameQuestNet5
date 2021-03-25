@@ -14,14 +14,14 @@ namespace GameQuest.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<Context>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("ContextConnection")));
 
                 services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
-                    .AddEntityFrameworkStores<Context>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<Context>();
             });
         }
     }

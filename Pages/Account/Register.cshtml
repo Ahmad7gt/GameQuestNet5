@@ -1,23 +1,8 @@
 ﻿@page
 @model GameQuest.Pages.Account.RegisterModel
 @{
+    ViewData["Title"] = "Register";
 }
-
-
-
-@*<form asp-page-handler="RegisterAccount" method="post">
-
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="password" placeholder="Password" />
-    <input type="password" name="confirmPassword" placeholder="Confrim password" />
-
-    <input type="checkbox" name="rememberMe" placeholder="RememberME" value="RememberMe">
-
-
-    <button class="btn btn-orange">Create Account</button>
-    <br />
-    @ViewData["message"]
-</form>*@
 
 
 <div class="row">
@@ -48,7 +33,7 @@
                     </div>
                     <button type="submit" class="btn btn-orange">Register</button>
 
-                    <span style="color: red;">@ViewData["message"]</span>
+                    <p style="color: red;">@ViewData["message"]</p>
 
                 </form>
             </div>

@@ -1,0 +1,20 @@
+﻿@page
+@model GameQuest.Pages.Admin.ProductsModel
+@{
+}
+
+
+
+<nav class="nav nav-pills nav-justified">
+
+    <a class="nav-link" href="/admin/products/add"><i class="fas fa-plus-square"></i></a>
+
+</nav>
+
+<hr />
+
+
+@foreach (var product in Model.products)
+{
+    <div>@product.Name</div>
+}

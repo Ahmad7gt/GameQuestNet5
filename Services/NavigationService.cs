@@ -47,12 +47,12 @@ public class NavigationService
 
                 }
             }
-            catch 
-            { 
-            
+            catch
+            {
+
             }
 
-            
+
         }
 
         _context.Dispose();

@@ -17,6 +17,7 @@ namespace GameQuest.Pages
         private Context _context;
 
         public ContentPageModel _contentModel;
+
         public ContentModel(Context context)
         {
             _context = context;
@@ -35,6 +36,7 @@ namespace GameQuest.Pages
                 {
                     if (content.IsPublished)
                     {
+                        ViewData["Title"] = content.Title;
                         _contentModel.Title = content.Title;
                         _contentModel.Body = content.Body;
                         _contentModel.ImageUrl = content.ImageUrl;

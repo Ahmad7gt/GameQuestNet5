@@ -19,8 +19,16 @@ namespace GameQuest.Pages.Account
             _signInManager = signInManager;
         }
         
-        public void OnGet()
+        public void OnGet(string value)
         {
+            if(!string.IsNullOrWhiteSpace(value))
+            { 
+                if (value.Equals("accessdenied"))
+                { 
+                ViewData["message"] = "You do not have access to that page, please sign in with the right acocunt.";
+                }
+            }
+
         }
 
 
@@ -36,7 +44,7 @@ namespace GameQuest.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    ViewData["message"] = "User is now logged in";
+                    return LocalRedirect("/");
                 }
                 else
                 {

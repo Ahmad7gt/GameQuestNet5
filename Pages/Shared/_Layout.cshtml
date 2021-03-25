@@ -25,7 +25,7 @@
 
                         @foreach (var nav in navService.GetMenu())
                         {
-                            <li class="nav-item  ">
+                            <li class="nav-item">
                                 <a href="/content/@nav.Title" class="nav-link navWordsColor">@nav.Title</a>
                             </li>
                         }
@@ -40,6 +40,19 @@
 
                     </ul>
 
+                    <ul class="navbar-nav ml-auto">
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item userGreeting">
+
+                                <a class="nav-link text-dark">Hello @(User.IsInRole("Admin") ? "admin" : "customer"), @User.Identity.Name </a>
+
+                            </li>
+                        }
+
+                    </ul>
+
                     <div class="btn-group">
                         <button type="button" class="btn btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle"></i>
@@ -48,14 +61,21 @@
 
                             @if (!User.Identity.IsAuthenticated)
                             {
-                                <a id="categoryTrigger" class="nav-link navWordsColor" href="/account/login">Login</a>
-                                <a id="categoryTrigger" class="nav-link navWordsColor" href="/account/register">Register</a>
+
+                                <a id="categoryTrigger" class="nav-link text-dark" href="/account/login">Login</a>
+                                <a id="categoryTrigger" class="nav-link text-dark" href="/account/register">Register</a>
                             }
                             else
                             {
-                                @*<i class="fas fa-user-circle">,@User.Identity.</i>*@
 
-                                <a class="nav-link text-dark">Hello, @User.Identity.Name</a>
+                                if (User.IsInRole("Admin"))
+                                {
+
+                                    <a id="categoryTrigger" class="nav-link text-dark" href="/admin/content">Content Editor</a>
+                                    <a id="categoryTrigger" class="nav-link text-dark" href="/admin/products">Product Editor</a>
+                                    <a id="categoryTrigger" class="nav-link text-dark" href="/admin/users">User Manager</a>
+
+                                }
 
                                 <a class="nav-link text-dark" href="/account/logout">Sign out</a>
                             }

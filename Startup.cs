@@ -36,7 +36,7 @@ namespace GameQuest
                 options.Cookie.Name = "GameQuestCookie";
                 options.LoginPath = $"/account/login";
                 options.LogoutPath = $"/account/logout";
-                options.AccessDeniedPath = $"/account/access-denied";
+                options.AccessDeniedPath = $"/account/login/accessdenied";
                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
                 options.SlidingExpiration = true;
                 options.Cookie.SameSite = SameSiteMode.None;

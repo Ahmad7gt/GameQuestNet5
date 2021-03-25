@@ -1,0 +1,62 @@
+﻿@page
+@model GameQuest.Pages.Admin.Products.AddModel
+@{
+}
+
+@*public string Name { get; set; }
+    public string Description { get; set; }
+    public string ImgUrl { get; set; }
+    public double Price { get; set; }
+    public double Sale { get; set; }
+    public bool IsVisible { get; set; }
+
+    [ForeignKey("Id")]
+    public Guid CategoryId { get; set; }
+
+    public Category Category { get; set; }
+
+    public bool Deals { get; set; }*@
+
+<form asp-page-handler="AddProduct" method="post">
+
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+        <textarea name="description" class="form-control" placeholder="description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="imgurl" class="form-control" placeholder="ImgUrl">
+    </div>
+
+    <div class="form-group">
+        <input type="number" name="price" class="form-control" placeholder="Price">
+    </div>
+
+    <div class="form-group">
+        <input type="number" name="sale" class="form-control" placeholder="Sale">
+    </div>
+
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="isVisible">
+        <label class="form-check-label" for="exampleCheck1">Is visible</label>
+    </div>
+
+    <div class="form-group">
+        <select asp-for="mainSelectedCategoryItemId" asp-items="@Model.MainCategoryItems">
+        </select>
+    </div>
+
+    <div class="form-group">
+        <select asp-for="subSelectedCategoryItemId" asp-items="@Model.SubCategoryItems">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Product</button>
+
+
+</form>
+

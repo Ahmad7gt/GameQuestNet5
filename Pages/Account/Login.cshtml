@@ -1,6 +1,8 @@
-﻿@page
+﻿@page "{value?}"
+
 @model GameQuest.Pages.Account.LoginModel
 @{
+    ViewData["Title"] = "Login";
 }
 
 
@@ -27,7 +29,7 @@
                     </div>
                     <button type="submit" class="btn btn-orange">Login</button>
 
-                    <span style="color: red;">@ViewData["message"]</span>
+                    <p style="color: red;">@ViewData["message"]</p>
 
                 </form>
             </div>
