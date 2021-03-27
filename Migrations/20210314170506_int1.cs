@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GameQuest.Migrations
 {
-    public partial class init : Migration
+    public partial class int1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -235,6 +235,7 @@ namespace GameQuest.Migrations
                     Sale = table.Column<double>(type: "float", nullable: false),
                     IsVisible = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Deals = table.Column<bool>(type: "bit", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -281,9 +282,9 @@ namespace GameQuest.Migrations
                 columns: new[] { "Id", "Body", "Created", "ImageUrl", "IsInMenu", "IsPublished", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("f25e49d0-f763-40ab-b0ce-8117f53021e7"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(6568), "", false, false, "About" },
-                    { new Guid("02a8cfa6-28d9-4b09-a9f0-bde8ebbf5734"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(8312), "", false, false, "FAQ" },
-                    { new Guid("8d551941-de8d-48b4-aa76-5803a483d1b7"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(8343), "https://puppypetdog.com/wp-content/uploads/2019/11/contact-header-image.jpg", false, false, "Contact" }
+                    { new Guid("e14a74ab-26db-4cdb-8aaa-6102a76df757"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(4927), "", false, false, "About" },
+                    { new Guid("901918a6-bef4-4ca0-a207-34caede7ef63"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(7595), "", false, false, "FAQ" },
+                    { new Guid("441ab33b-b14c-4800-af37-a7812a036095"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus erat non congue efficitur. Nulla sollicitudin sit amet dolor sed vestibulum. Aenean laoreet, nibh ac hendrerit egestas, metus urna semper orci, nec aliquet urna tellus at nibh. Vivamus vel sapien eget libero cursus hendrerit sed at quam. Etiam nec turpis urna. Donec at lacus in nibh cursus ullamcorper eget vitae lorem. In congue consectetur purus vitae porta. Donec volutpat rhoncus nisl, et placerat tellus fringilla et.", new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(7632), "https://puppypetdog.com/wp-content/uploads/2019/11/contact-header-image.jpg", false, false, "Contact" }
                 });
 
             migrationBuilder.InsertData(
@@ -291,10 +292,10 @@ namespace GameQuest.Migrations
                 columns: new[] { "Id", "Created", "Description", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("6dc619dc-3cea-4637-ab0e-03272591c36e"), new DateTime(2021, 3, 11, 14, 17, 14, 742, DateTimeKind.Local).AddTicks(5158), "", "Nintendo" },
-                    { new Guid("cbba82d9-be24-46a0-b1f2-13ce027e3a6d"), new DateTime(2021, 3, 11, 14, 17, 14, 744, DateTimeKind.Local).AddTicks(2917), "", "Playstation" },
-                    { new Guid("a0200076-d7cc-4bd1-9364-3859abfbedd7"), new DateTime(2021, 3, 11, 14, 17, 14, 744, DateTimeKind.Local).AddTicks(2947), "", "Xbox" },
-                    { new Guid("68ee4388-6fdd-490f-974d-1c9312c9af56"), new DateTime(2021, 3, 11, 14, 17, 14, 744, DateTimeKind.Local).AddTicks(2951), "", "PC" }
+                    { new Guid("ec631dd4-daee-40df-ac11-5b2ec3145f2f"), new DateTime(2021, 3, 14, 18, 5, 6, 367, DateTimeKind.Local).AddTicks(5505), "", "Nintendo" },
+                    { new Guid("3ca6d567-a99f-44dc-a732-862aa19c2634"), new DateTime(2021, 3, 14, 18, 5, 6, 369, DateTimeKind.Local).AddTicks(8163), "", "Playstation" },
+                    { new Guid("bfd6c4d6-1aa0-4ad0-be8d-e6b3ae84d052"), new DateTime(2021, 3, 14, 18, 5, 6, 369, DateTimeKind.Local).AddTicks(8205), "", "Xbox" },
+                    { new Guid("4e1f8d82-2cf2-428c-aa10-2dcec848e2b0"), new DateTime(2021, 3, 14, 18, 5, 6, 369, DateTimeKind.Local).AddTicks(8210), "", "PC" }
                 });
 
             migrationBuilder.InsertData(
@@ -302,10 +303,10 @@ namespace GameQuest.Migrations
                 columns: new[] { "Id", "Created", "Description", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("d814d727-8dc8-4e5d-8676-06effec1f2c8"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(2268), "", "Games" },
-                    { new Guid("773a9da0-ae98-4b48-a9ac-527c9cee8d44"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(3030), "", "Accesories" },
-                    { new Guid("c616c83b-ed19-44ce-8f8a-4a65dce9c5f4"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(3042), "", "Controllers" },
-                    { new Guid("35f2b18a-3ad7-494e-b2be-f89dd7d1c493"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(3045), "", "Console" }
+                    { new Guid("c7f68ed4-94be-4ba8-b7c7-75e288f876f9"), new DateTime(2021, 3, 14, 18, 5, 6, 370, DateTimeKind.Local).AddTicks(9768), "", "Games" },
+                    { new Guid("97be695e-2f25-448b-b64a-405906780cb9"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(721), "", "Accesories" },
+                    { new Guid("de347fa3-5529-4d7e-9dcc-b35e7db554a2"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(736), "", "Controllers" },
+                    { new Guid("44e096cf-c329-4b5a-9177-62976359cded"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(740), "", "Console" }
                 });
 
             migrationBuilder.InsertData(
@@ -313,21 +314,26 @@ namespace GameQuest.Migrations
                 columns: new[] { "Id", "Created", "MainCategoryId", "SubCategoryId" },
                 values: new object[,]
                 {
-                    { new Guid("2ceac10a-ac19-4c01-a007-6210b625323a"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(4081), new Guid("6dc619dc-3cea-4637-ab0e-03272591c36e"), new Guid("d814d727-8dc8-4e5d-8676-06effec1f2c8") },
-                    { new Guid("247bbcab-0361-462c-8403-c4f1db9e8a94"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(5274), new Guid("cbba82d9-be24-46a0-b1f2-13ce027e3a6d"), new Guid("d814d727-8dc8-4e5d-8676-06effec1f2c8") },
-                    { new Guid("5c9501a8-c12a-490c-9db7-3ca40bd039e3"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(5287), new Guid("a0200076-d7cc-4bd1-9364-3859abfbedd7"), new Guid("d814d727-8dc8-4e5d-8676-06effec1f2c8") },
-                    { new Guid("c75534c3-d341-49be-a7c6-b4cb15727113"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(5290), new Guid("68ee4388-6fdd-490f-974d-1c9312c9af56"), new Guid("d814d727-8dc8-4e5d-8676-06effec1f2c8") }
+                    { new Guid("9615c035-9bf1-4c0b-9aea-89a705d5006d"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(1929), new Guid("ec631dd4-daee-40df-ac11-5b2ec3145f2f"), new Guid("c7f68ed4-94be-4ba8-b7c7-75e288f876f9") },
+                    { new Guid("87df517a-7d38-47c2-8597-d9b031c2f3ba"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3357), new Guid("3ca6d567-a99f-44dc-a732-862aa19c2634"), new Guid("c7f68ed4-94be-4ba8-b7c7-75e288f876f9") },
+                    { new Guid("e28207ef-4b89-4ecc-b6b9-a8a48f429b6c"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3372), new Guid("bfd6c4d6-1aa0-4ad0-be8d-e6b3ae84d052"), new Guid("c7f68ed4-94be-4ba8-b7c7-75e288f876f9") },
+                    { new Guid("324ae53e-7ee6-4e08-8e99-ac5ecc9dc15a"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3375), new Guid("4e1f8d82-2cf2-428c-aa10-2dcec848e2b0"), new Guid("c7f68ed4-94be-4ba8-b7c7-75e288f876f9") },
+                    { new Guid("9cd4df84-17eb-4097-9c04-e613fca6d7ce"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3385), new Guid("bfd6c4d6-1aa0-4ad0-be8d-e6b3ae84d052"), new Guid("97be695e-2f25-448b-b64a-405906780cb9") },
+                    { new Guid("bfa74dfb-4dc9-47a7-8048-51901d27516f"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3389), new Guid("4e1f8d82-2cf2-428c-aa10-2dcec848e2b0"), new Guid("97be695e-2f25-448b-b64a-405906780cb9") },
+                    { new Guid("d203deeb-88b9-44d1-bbcc-1402d089d004"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3379), new Guid("ec631dd4-daee-40df-ac11-5b2ec3145f2f"), new Guid("de347fa3-5529-4d7e-9dcc-b35e7db554a2") },
+                    { new Guid("ae11ac62-f3c0-4e5e-ae70-290fe4f980f3"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(3382), new Guid("3ca6d567-a99f-44dc-a732-862aa19c2634"), new Guid("de347fa3-5529-4d7e-9dcc-b35e7db554a2") }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "Created", "Description", "ImgUrl", "IsVisible", "Name", "Price", "Sale" },
+                columns: new[] { "Id", "CategoryId", "Created", "Deals", "Description", "ImgUrl", "IsVisible", "Name", "Price", "Sale" },
                 values: new object[,]
                 {
-                    { new Guid("58fc5376-1724-4848-a143-fe9ef9bb0bc9"), new Guid("5c9501a8-c12a-490c-9db7-3ca40bd039e3"), new DateTime(2021, 3, 11, 14, 17, 14, 745, DateTimeKind.Local).AddTicks(9109), "Halo: Combat Evolved, simply known as Halo, is a first-person shooter video game developed by Bungie and published by Microsoft Game Studios. It was released as a launch title for Microsoft's Xbox video game console on November 15, 2001. Microsoft released versions of the game for Windows and Mac OS X in 2003.", "https://halo.wiki.gallery/images/6/6a/Halo_Combat_Evolved_cover.png", false, "Halo: Combat Evolved", 599.0, 0.0 },
-                    { new Guid("145dac60-4055-4fdb-aefd-af19c34f5df1"), new Guid("5c9501a8-c12a-490c-9db7-3ca40bd039e3"), new DateTime(2021, 3, 11, 14, 17, 14, 746, DateTimeKind.Local).AddTicks(1489), "Fable is a series of action role-playing video games for Xbox, Microsoft Windows, macOS, Xbox 360 and Xbox One platforms. The series was developed by Lionhead Studios until the studio was closed in 2016, and is published by Xbox Game Studios", "https://upload.wikimedia.org/wikipedia/en/5/5b/Fablebox.jpg", false, "Fable", 599.0, 0.0 },
-                    { new Guid("c8022908-31c8-4007-9cd2-98bf2559aade"), new Guid("c75534c3-d341-49be-a7c6-b4cb15727113"), new DateTime(2021, 3, 11, 14, 17, 14, 746, DateTimeKind.Local).AddTicks(1453), "Counter-Strike: Global Offensive is a multiplayer first-person shooter video game developed by Valve and Hidden Path Entertainment. It is the fourth game in the Counter-Strike series and was released for Windows, macOS, Xbox 360, and PlayStation 3 in August 2012, while the Linux version was released in 2014.", "https://static.wikia.nocookie.net/cswikia/images/1/1e/Csgo_steam_store_header_latest.jpg", false, "Counter-Strike: Global Offensive", 49.0, 0.0 },
-                    { new Guid("52630fee-4e90-4e78-b631-e40d1cc19cd7"), new Guid("c75534c3-d341-49be-a7c6-b4cb15727113"), new DateTime(2021, 3, 11, 14, 17, 14, 746, DateTimeKind.Local).AddTicks(1509), "F1 2020 is the official video game of the 2020 Formula 1 and Formula 2 Championships developed and published by Codemasters.", "https://s3.gaming-cdn.com/images/products/7589/271x377/f1-2020-cover.jpg", false, "F1 2020", 599.0, 0.0 }
+                    { new Guid("8869f357-6b06-4f7b-8c23-f1283aacfbf0"), new Guid("e28207ef-4b89-4ecc-b6b9-a8a48f429b6c"), new DateTime(2021, 3, 14, 18, 5, 6, 371, DateTimeKind.Local).AddTicks(8907), false, "Halo: Combat Evolved, simply known as Halo, is a first-person shooter video game developed by Bungie and published by Microsoft Game Studios. It was released as a launch title for Microsoft's Xbox video game console on November 15, 2001. Microsoft released versions of the game for Windows and Mac OS X in 2003.", "https://halo.wiki.gallery/images/6/6a/Halo_Combat_Evolved_cover.png", false, "Halo: Combat Evolved", 599.0, 0.0 },
+                    { new Guid("cb7ede06-4066-4747-a551-5be0b914374c"), new Guid("e28207ef-4b89-4ecc-b6b9-a8a48f429b6c"), new DateTime(2021, 3, 14, 18, 5, 6, 372, DateTimeKind.Local).AddTicks(2479), true, "Fable is a series of action role-playing video games for Xbox, Microsoft Windows, macOS, Xbox 360 and Xbox One platforms. The series was developed by Lionhead Studios until the studio was closed in 2016, and is published by Xbox Game Studios", "https://upload.wikimedia.org/wikipedia/en/5/5b/Fablebox.jpg", false, "Fable", 599.0, 0.0 },
+                    { new Guid("5f54c5c4-919c-4eda-93df-a3a08a50990f"), new Guid("324ae53e-7ee6-4e08-8e99-ac5ecc9dc15a"), new DateTime(2021, 3, 14, 18, 5, 6, 372, DateTimeKind.Local).AddTicks(2433), false, "Counter-Strike: Global Offensive is a multiplayer first-person shooter video game developed by Valve and Hidden Path Entertainment. It is the fourth game in the Counter-Strike series and was released for Windows, macOS, Xbox 360, and PlayStation 3 in August 2012, while the Linux version was released in 2014.", "https://static.wikia.nocookie.net/cswikia/images/1/1e/Csgo_steam_store_header_latest.jpg", false, "Counter-Strike: Global Offensive", 49.0, 0.0 },
+                    { new Guid("30580b7d-3d78-40f2-a52c-62af24d0b44e"), new Guid("324ae53e-7ee6-4e08-8e99-ac5ecc9dc15a"), new DateTime(2021, 3, 14, 18, 5, 6, 372, DateTimeKind.Local).AddTicks(2504), true, "F1 2020 is the official video game of the 2020 Formula 1 and Formula 2 Championships developed and published by Codemasters.", "https://s3.gaming-cdn.com/images/products/7589/271x377/f1-2020-cover.jpg", false, "F1 2020", 599.0, 0.0 },
+                    { new Guid("70ba1978-96fd-4d61-af78-4a2b7361d3ae"), new Guid("9cd4df84-17eb-4097-9c04-e613fca6d7ce"), new DateTime(2021, 3, 14, 18, 5, 6, 372, DateTimeKind.Local).AddTicks(2526), true, "The Xbox controller is the primary game controller for Microsoft's Xbox home video game console and was introduced at the Game Developers Conference in 2000. ", "https://www.geeky-gadgets.com/wp-content/uploads/2018/08/Wireless-Controller-Grey-Blue-2.jpg", false, "Xbox Controller", 599.0, 0.0 }
                 });
 
             migrationBuilder.CreateIndex(
