@@ -20,3 +20,13 @@ $('#mainContainer').hover(function () {
 
 
 $('.carousel').carousel()
+
+$('#searchBtn').click(function () {
+
+    var searchTerm = $('#searchInput').val();
+
+    var route = "/Search/" + searchTerm
+
+    window.location.replace(route);
+
+});

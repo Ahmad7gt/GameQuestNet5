@@ -43,12 +43,12 @@ namespace GameQuest.Pages.Admin.Products
 
             foreach (var mainCat in MainCategories)
             {
-                MainCategoryItems.Add(new SelectListItem(mainCat.Name, mainCat.Id.ToString()));
-            }
+                MainCategoryItems.Add(new SelectListItem(mainCat.Name, mainCat.Id.ToString()));   // id visas inte
+            }                                                   
 
             foreach (var mainCat in SubCategories)
             {
-                SubCategoryItems.Add(new SelectListItem(mainCat.Name, mainCat.Id.ToString()));
+                SubCategoryItems.Add(new SelectListItem(mainCat.Name, mainCat.Id.ToString()));          // men Pc har ingen console
             }
         }
 
@@ -58,7 +58,7 @@ namespace GameQuest.Pages.Admin.Products
 
             Category category = _context.Categories.Where(x => x.MainCategoryId.Equals(mainSelectedCategoryItemId.ToString()) && x.SubCategoryId.Equals(subSelectedCategoryItemId.ToString())).FirstOrDefault();
 
-            if (category is null)
+            if (category is null)     
             {
                 category = new Category(mainSelectedCategoryItemId, subSelectedCategoryItemId);
                 _context.Categories.Add(category);
@@ -82,6 +82,16 @@ namespace GameQuest.Pages.Admin.Products
 
             _context.Products.Add(product);
             _context.SaveChanges();
+            if (product is not null)
+            {
+                ViewData["message"] = "You product has been added";
+            }
+            else
+            {
+                ViewData["message"] = "Something happened, your product was not created";
+            }
+
+            //return LocalRedirect("/");
 
         }
     }

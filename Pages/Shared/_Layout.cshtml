@@ -41,6 +41,31 @@
                     </ul>
 
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+
+                            <div class="card-body row no-gutters align-items-center">
+
+                                <div class="col-auto">
+                                    <i class="fas fa-search h5 text-body"></i>
+                                </div>
+
+                                <div class="col">
+                                    <input id="searchInput" class="form-control form-control-sm form-control-borderless" type="text" placeholder="Search...">
+                                </div>
+
+                                <div class="col-auto">
+                                    <button id="searchBtn" class="btn  btn-orange" type="submit">Search</button>
+                                </div>
+
+                            </div>
+
+                        </li>
+
+
+
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
 
                         @if (User.Identity.IsAuthenticated)
                         {

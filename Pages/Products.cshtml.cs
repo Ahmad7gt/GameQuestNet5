@@ -26,6 +26,8 @@ namespace GameQuest.Pages
 
         public void OnGet(string mainCat, string subCat)
         {
+            
+         
 
             if (string.IsNullOrWhiteSpace(mainCat) && string.IsNullOrWhiteSpace(subCat))
             {
