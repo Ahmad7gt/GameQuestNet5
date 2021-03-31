@@ -12,20 +12,39 @@ namespace GameQuest.Pages
 {
     public class ContentModel : Microsoft.AspNetCore.Mvc.RazorPages.PageModel
     {
-        public static IServiceProvider serviceProvider { get; }
+        //public static IServiceProvider serviceProvider { get; }
+
+        private EmailService _email;
 
         private Context _context;
 
         public ContentPageModel _contentModel;
 
-        public ContentModel(Context context)
+        [BindProperty]
+        public SendEmailModel emailModel { get; set; }
+
+        public bool showContactForm = false;
+        public bool showEmailSentSuccess = false;
+
+        public ContentModel(Context context, EmailService emailService)
         {
             _context = context;
             _contentModel = new ContentPageModel();
+            _email = emailService;
         }
-
+        
         public void OnGet(string pageName)
         {
+
+
+            if (pageName.ToLower().Equals("Contact".ToLower()))
+            {
+                showContactForm = true;
+            }
+            else
+            {
+                showContactForm = false;
+            }
 
             if (pageName is not null)
             {
@@ -57,6 +76,16 @@ namespace GameQuest.Pages
                 _contentModel.Title = "Sorry, you have no query";
             }
 
+        }
+
+        public void OnPostSendEmail()
+        {
+            bool didSend = _email.SendContactEmail(emailModel);
+
+            if (didSend)
+            {
+                showEmailSentSuccess = true;
+            }
         }
     }
 }

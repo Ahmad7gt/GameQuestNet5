@@ -29,6 +29,7 @@ namespace GameQuest
         {
             services.AddRazorPages();
             services.AddScoped<NavigationService>();
+            services.AddScoped<EmailService>();
 
 
             services.ConfigureApplicationCookie(options =>
