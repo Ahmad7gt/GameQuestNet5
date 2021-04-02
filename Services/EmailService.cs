@@ -16,14 +16,14 @@ public class EmailService
     private readonly string smtpServer = "smtp.gmail.com";  // POP3/Imap -> get your emails
     private readonly int portNumber = 587;
     private readonly bool enableSSL = true;
-    private readonly string emailFrom = "booktalk.contact@gmail.com";
-    private readonly string password = "BookTalker3k$";
+    private readonly string emailFrom = "gamequest77@gmail.com";
+    private readonly string password = "ahmadA123!";
 
 
     public bool SendEmail()
     {
 
-        string emailTo = "ahmad1alolabi@gmail.com";
+        string emailTo = "ahmad1alolabi@gmail.com";  //!!
         string subject = "Hello World!";
         string body = "This is our first email";
 
@@ -47,11 +47,11 @@ public class EmailService
         }
 
 
-        using (MailMessage mail = new MailMessage())
+        using (MailMessage mail = new MailMessage()) ///!!!!!
         {
 
 
-            mail.From = new MailAddress(emailTo, "BookTalk Support");
+            mail.From = new MailAddress(emailTo, "GameQuest Support");
             mail.To.Add(emailTo);
             mail.Subject = subject;
             mail.Body = builder.ToString();

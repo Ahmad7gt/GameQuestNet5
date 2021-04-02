@@ -183,7 +183,6 @@ footer a {
 
 }
 
-
 .userGreeting a {
     color: var(--lightGreyColor) !important;
     font-size: 0.8rem;
@@ -191,12 +190,57 @@ footer a {
 .userGreeting a:hover {
     color: var(--lightGreyColor) !important;
 }
+
+
+
+#searchInput {
+    border-radius: 5px 0 0 5px;
+    height: 37px;
+}
+
+#searchBtn {
+    border-radius: 0 5px 5px 0;
+}
+
+.modal{
+    z-index: 99999999;
+}
+
+
+.modal * {
+    color: var(--darkColor);
+}
+
+.logoHolder{
+    font-size: 3rem;
+    color: var(--orangeColor);
+}
+.tableIcon{
+    color: var(--lightColor) !important;
+}
+
+.adminNav{
+
+    background-color: var(--darkColor);
+
+
+}
+
+.adminNav * {
+    color: var(--lightColor);
+}
+
+
+
+
 /* OTHER STUFF */
 a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
 }
+
+
 
 /* Provide sufficient contrast against white background */
 a {

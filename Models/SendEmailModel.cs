@@ -10,5 +10,10 @@ namespace GameQuest.Models
         public string Email { get; set; }
         public string Message { get; set; }
 
+        public SendEmailModel(string email, string message)
+        {
+            Email = email;
+            Message = message;
+        }
     }
 }

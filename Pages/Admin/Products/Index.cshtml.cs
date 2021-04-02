@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GameQuest.Pages.Admin
 {
-    [Authorize( Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class ProductsModel : PageModel
     {
 
@@ -26,5 +26,29 @@ namespace GameQuest.Pages.Admin
 
 
         }
+
+
+        private void ReloadData()
+        {
+            products = _context.Products.ToList();
+        }
+
+        public IActionResult OnPostDeleteProduct(string productid)
+        {
+
+            Product product = _context.Products.Where(x => x.Id == new Guid(productid)).FirstOrDefault();
+
+            _context.Products.Remove(product);
+
+            _context.SaveChanges();
+
+            ReloadData();
+
+            return Page();
+
+        }
+
+
+
     }
 }

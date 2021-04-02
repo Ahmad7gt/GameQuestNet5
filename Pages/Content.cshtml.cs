@@ -20,8 +20,7 @@ namespace GameQuest.Pages
 
         public ContentPageModel _contentModel;
 
-        [BindProperty]
-        public SendEmailModel emailModel { get; set; }
+        
 
         public bool showContactForm = false;
         public bool showEmailSentSuccess = false;
@@ -78,14 +77,29 @@ namespace GameQuest.Pages
 
         }
 
-        public void OnPostSendEmail()
+        public void OnPostSendEmail(string email, string message)
         {
-            bool didSend = _email.SendContactEmail(emailModel);
 
-            if (didSend)
+            SendEmailModel emailModel  = new SendEmailModel(email, message);
+
+
+            try
             {
-                showEmailSentSuccess = true;
+                bool didSend = _email.SendContactEmail(emailModel);
+
+                if (didSend)
+                {
+                    showEmailSentSuccess = true;
+                }
+
             }
+            catch(Exception ex)
+            {
+
+                ViewData["message"] = $"Something went wrong: {ex}";
+
+            }
+            
         }
     }
 }
