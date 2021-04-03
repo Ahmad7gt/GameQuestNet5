@@ -1,0 +1,38 @@
+﻿@page "{searchQuery?}"
+@model GameQuest.Pages.SearchModel
+
+
+
+@{
+
+
+    int maxLenght = 150;
+
+    <div class="row">
+
+        
+        
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-sm-12 col-md-6 col-lg-3 col-bottom-pad">
+                    <div class="card p-2">
+                        <div style="background-image: url(@product.ImgUrl);" class="productImageContainer blur">
+
+                        </div>
+
+                        <div style="background-image: url(@product.ImgUrl);" class="mainImageContainer">
+
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description.Substring(0, product.Description.Length < maxLenght ? product.Description.Length : maxLenght)@(product.Description.Length > maxLenght ? "..." : string.Empty)</p>
+                            <span>@product.Price</span>
+                            <a href="#" class="btn btn-orange">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+       
+    </div>
+}
