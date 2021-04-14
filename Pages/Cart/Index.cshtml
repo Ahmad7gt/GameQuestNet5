@@ -1,0 +1,96 @@
+﻿@page
+@inject CartService cartService;
+@model GameQuest.Pages.Cart.IndexModel
+@{
+}
+
+
+    @if (cartService.CartCount() != 0)
+    {
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Media</th>
+                    <th scope="col">Product</th>
+                    <th> </th>
+                    <th scope="col">Quantity</th>
+                    <th> </th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    int count = 1;
+
+                    foreach (var item in cartService.GetCart())
+                    {
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td><img src="@item.Product.ImgUrl" alt="@item.Product.Name" class="img-fluid cartImg" /></td>
+                            <td>@item.Product.Name</td>
+                            <td>
+                                <center>
+                                    <form asp-page-handler="DecrementItem" method="post">
+                                        <input type="hidden" value="@item.Product.Id" name="productId" />
+                                        <button class="btn-transparent">
+                                            <i class="fas fa-arrow-alt-circle-left"></i>
+                                        </button>
+                                    </form>
+                                </center>
+                            </td>
+                            <td><center>@item.Quantity</center></td>
+                            <td>
+                                <center>
+                                    <form asp-page-handler="AddItem" method="post">
+                                        <input type="hidden" value="@item.Product.Id" name="productId" />
+                                        <button class="btn-transparent">
+                                            <i class="fas fa-arrow-alt-circle-right"></i>
+                                        </button>
+                                    </form>
+                                </center>
+                            </td>
+                            <td>@item.Product.Price</td>
+                        </tr>
+
+                        count++;
+                    }
+                }
+
+            </tbody>
+        </table>
+
+        <div style="float: right">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VAT:</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td>Total:</td>
+                        <td>@cartService.GetCart().Sum(x => x.Product.Price * x.Quantity)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr />
+
+        <center>
+            <a href="/cart" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Proceed to checkout!</a>
+        </center>
+
+    }
+    else
+    {
+        <p class="text-monospace">You have no products in your cart!</p>
+    }

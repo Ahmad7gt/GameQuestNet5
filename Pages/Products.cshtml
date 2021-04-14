@@ -31,7 +31,19 @@
                             <h5 class="card-title">@product.Name</h5>
                             <p class="card-text">@product.Description.Substring(0, product.Description.Length < maxLenght ? product.Description.Length : maxLenght)@(product.Description.Length > maxLenght ? "..." : string.Empty)</p>
                             <span>@product.Price</span>
-                            <a href="#" class="btn btn-orange">Add to cart</a>
+
+
+
+
+                            <form asp-page-handler="AddToCart" method="post">
+
+                                <input type="hidden" value="@product.Id" name="productId" />
+
+                                <button type="submit" class="btn btn-orange"><i class="fas fa-cart-plus"></i></button>
+
+                            </form>
+
+
                         </div>
                     </div>
                 </div>

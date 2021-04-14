@@ -12,22 +12,22 @@ namespace GameQuest.Pages
     public class ProductsModel : PageModel
     {
         private Context _context;
+        private CartService _cartService;
 
         [BindProperty]
         public List<Product> Products { get; set; }
 
         public bool isEmpty = false;
 
-        public ProductsModel(Context context)
+        public ProductsModel(Context context, CartService cartService)
         {
             _context = context;
+            _cartService = cartService;
 
         }
 
         public void OnGet(string mainCat, string subCat)
         {
-            
-         
 
             if (string.IsNullOrWhiteSpace(mainCat) && string.IsNullOrWhiteSpace(subCat))
             {
@@ -44,7 +44,6 @@ namespace GameQuest.Pages
                     Products = _context.Products.Include(a => a.Category.MainCategory).Include(b => b.Category.SubCategory).Where(x => x.Category.MainCategory.Name.Equals(mainCat) && x.Category.SubCategory.Name.Equals(subCat)).ToList();
                 }
 
-
             }
 
             if (!Products.Any())
@@ -55,6 +54,14 @@ namespace GameQuest.Pages
             {
                 isEmpty = false;
             }
+        }
+
+
+        public IActionResult OnPostAddToCart(string productId)
+        {
+            _cartService.AddToCart(productId);
+
+            return LocalRedirect("/products");
         }
 
     }

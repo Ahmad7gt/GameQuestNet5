@@ -30,6 +30,7 @@ namespace GameQuest
             services.AddRazorPages();
             services.AddScoped<NavigationService>();
             services.AddScoped<EmailService>();
+            services.AddScoped<CartService>();
 
 
             services.ConfigureApplicationCookie(options =>

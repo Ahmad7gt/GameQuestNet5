@@ -94,17 +94,40 @@ footer a {
     filter: blur(10px);
 }
 
+
+.cartMenu::after {
+    display: none;
+}
+
+.cartDropDown {
+    padding: 5px;
+    text-align: left;
+
+    font-size: 0.7rem;
+
+    min-width: 30rem;
+}
+
+.cartImg {
+
+    max-height: 25px;
+}
+
+.btn-transparent {
+
+    background-color: transparent;
+    border: none;
+}
+
+
 .mainImageContainer {
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center center;
     height: 250px;
-
     position: static;
     z-index: 1;
-
     margin-top: -250px;
-
 }
 
 .col-bottom-pad {
