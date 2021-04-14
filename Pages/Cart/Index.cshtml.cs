@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GameQuest.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,10 +12,12 @@ namespace GameQuest.Pages.Cart
     {
 
         private CartService _cartService;
+        private Context _context;
 
-        public IndexModel(CartService cartService)
+        public IndexModel(CartService cartService, Context context)
         {
             _cartService = cartService;
+            _context = context;
         }
 
         public void OnGet()
@@ -41,5 +44,55 @@ namespace GameQuest.Pages.Cart
 
             return LocalRedirect("/cart");
         }
+
+        public IActionResult OnPostAddOrder(string name , string address, string address2, string  district, string zip, string city)
+        {
+
+            Order order = new Order();
+
+            User user = _context.Users.Where(user => user.UserName == User.Identity.Name).FirstOrDefault();
+
+            List<OrderProduct> orderProducts = new List<OrderProduct>();
+
+            _cartService.GetCart().ForEach(item => 
+            {
+                orderProducts.Add(new OrderProduct {
+                
+                    OrderId = order.Id,
+                    Order = order,
+                    ProductId = item.Product.Id.ToString(),
+                    ProductName = item.Product.Name,
+                    Quantity = item.Quantity,
+                    Price = item.Product.Price
+
+                });
+            });
+
+            order.Status = "Order Saved";
+
+            order.CustomerName = name;
+            order.Address = address;
+            order.Address2 = address2;
+            order.District = district;
+            order.ZipCode = zip;
+            order.City = city;
+
+            order.Finished = false;
+            order.PaymentMethod = "Not Defined";
+
+            order.UserId = new Guid(user.Id);
+            order.User = user;
+
+            order.Products = orderProducts;
+
+            _context.Orders.Add(order);
+
+            _context.SaveChanges();
+
+            return LocalRedirect($"/cart/summary/{order.Id}");
+        }
+
+
+
     }
 }

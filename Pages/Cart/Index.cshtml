@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <td>Total:</td>
-                        <td>@cartService.GetCart().Sum(x => x.Product.Price * x.Quantity)</td>
+                        <td>@cartService.GetCart().Sum(x => x.Product.Price * x.Quantity)<span> kr</span></td>
                     </tr>
                 </tbody>
             </table>
