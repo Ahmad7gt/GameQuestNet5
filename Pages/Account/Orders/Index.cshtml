@@ -1,0 +1,103 @@
+﻿@page
+@model GameQuest.Orders.Pages.IndexModel
+
+<h1>Orders</h1>
+
+@{
+
+    var orders = Model.GetOrders();
+    int count = 1;
+
+    if (orders is null)
+    {
+        <h3>Sorry...</h3>
+        <p>
+            There was an error, <a href="javascript:history.back();">go back!</a>
+        </p>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="#" class="rounded mr-2" alt="...">
+                <strong class="mr-auto">Error!</strong>
+                <small>Now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                <p>Sorry, Something went wrong...</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (orders.Count != 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in orders)
+                    {
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@order.Created</td>
+                            <td>@order.Products.Sum(x => x.Price * x.Quantity) SEK</td>
+                            <td>@order.Status</td>
+                            <td><a href="@($"/account/orders/details/{order.Id}")">Go to details</a></td>
+                        </tr>
+
+                        count++;
+
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+
+            <h3>You have no order...</h3>
+            <p>
+                Checkout the <a href="/store">store</a>, you might find something you like!
+            </p>
+
+            <div id="myToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="#" class="rounded mr-2" alt="...">
+                    <strong class="mr-auto">Sorry</strong>
+                    <small>Now</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <p>You have no orders!</p>
+                </div>
+            </div>
+
+        }
+
+    }
+
+}
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#myToast').toast('show');
+
+
+        });
+
+    </script>
+
+}

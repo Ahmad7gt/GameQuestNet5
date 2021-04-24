@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameQuest.Pages
+namespace GameQuest.Products.Pages
 {
-    public class ProductsModel : PageModel
+    public class IndexModel : PageModel
     {
         private Context _context;
         private CartService _cartService;
@@ -19,7 +19,7 @@ namespace GameQuest.Pages
 
         public bool isEmpty = false;
 
-        public ProductsModel(Context context, CartService cartService)
+        public IndexModel(Context context, CartService cartService)
         {
             _context = context;
             _cartService = cartService;

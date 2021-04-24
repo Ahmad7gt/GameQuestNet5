@@ -1,6 +1,6 @@
 ﻿@page "{mainCat?}/{subCat?}"
 
-@model GameQuest.Pages.ProductsModel
+@model GameQuest.Products.Pages.IndexModel
 @{
     ViewData["Title"] = "Products";
 }
@@ -29,11 +29,8 @@
 
                         <div class="card-body">
                             <h5 class="card-title">@product.Name</h5>
+                            <span style="font-weight: bold;">@product.Price SEK</span>
                             <p class="card-text">@product.Description.Substring(0, product.Description.Length < maxLenght ? product.Description.Length : maxLenght)@(product.Description.Length > maxLenght ? "..." : string.Empty)</p>
-                            <span>@product.Price</span>
-
-
-
 
                             <form asp-page-handler="AddToCart" method="post">
 
@@ -41,7 +38,13 @@
 
                                 <button type="submit" class="btn btn-orange"><i class="fas fa-cart-plus"></i></button>
 
+                                <a href="/products/item/@product.Id" class="btn btn-link btn-orange">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+
                             </form>
+
+
 
 
                         </div>

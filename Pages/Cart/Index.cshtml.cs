@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameQuest.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GameQuest.Pages.Cart
 {
+    [Authorize(Roles = "Customer,User")]
     public class IndexModel : PageModel
     {
 
         private CartService _cartService;
         private Context _context;
+
+        public bool isSuccess = false;
+        public string orderSuccessId = string.Empty;
 
         public IndexModel(CartService cartService, Context context)
         {
@@ -20,8 +25,21 @@ namespace GameQuest.Pages.Cart
             _context = context;
         }
 
-        public void OnGet()
+        public void OnGet(string status, string orderid)
         {
+            orderSuccessId = orderid;
+
+            if (!string.IsNullOrWhiteSpace(status))
+            { 
+                if (status.Equals("success"))
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
         }
 
         public IActionResult OnPostDecrementItem(string productId)
@@ -50,7 +68,7 @@ namespace GameQuest.Pages.Cart
 
             Order order = new Order();
 
-            User user = _context.Users.Where(user => user.UserName == User.Identity.Name).FirstOrDefault();
+            User user = _context.Users.Where(user => user.UserName == User.Identity.Name).FirstOrDefault(); // !!
 
             List<OrderProduct> orderProducts = new List<OrderProduct>();
 
@@ -89,7 +107,10 @@ namespace GameQuest.Pages.Cart
 
             _context.SaveChanges();
 
-            return LocalRedirect($"/cart/summary/{order.Id}");
+            isSuccess = true;
+            orderSuccessId = order.Id.ToString();
+
+            return LocalRedirect($"/cart/success/{order.Id}");
         }
 
 

@@ -1,96 +1,178 @@
-﻿@page
+﻿@page "{status?}/{orderid?}"
 @inject CartService cartService;
 @model GameQuest.Pages.Cart.IndexModel
+
+
 @{
-}
 
-
-    @if (cartService.CartCount() != 0)
+    if (!Model.isSuccess)
     {
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Media</th>
-                    <th scope="col">Product</th>
-                    <th> </th>
-                    <th scope="col">Quantity</th>
-                    <th> </th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                @{
-                    int count = 1;
+        @if (cartService.CartCount() != 0)
+        {
 
-                    foreach (var item in cartService.GetCart())
-                    {
-                        <tr>
-                            <th scope="row">@count</th>
-                            <td><img src="@item.Product.ImgUrl" alt="@item.Product.Name" class="img-fluid cartImg" /></td>
-                            <td>@item.Product.Name</td>
-                            <td>
-                                <center>
-                                    <form asp-page-handler="DecrementItem" method="post">
-                                        <input type="hidden" value="@item.Product.Id" name="productId" />
-                                        <button class="btn-transparent">
-                                            <i class="fas fa-arrow-alt-circle-left"></i>
-                                        </button>
-                                    </form>
-                                </center>
-                            </td>
-                            <td><center>@item.Quantity</center></td>
-                            <td>
-                                <center>
-                                    <form asp-page-handler="AddItem" method="post">
-                                        <input type="hidden" value="@item.Product.Id" name="productId" />
-                                        <button class="btn-transparent">
-                                            <i class="fas fa-arrow-alt-circle-right"></i>
-                                        </button>
-                                    </form>
-                                </center>
-                            </td>
-                            <td>@item.Product.Price</td>
-                        </tr>
-
-                        count++;
-                    }
-                }
-
-            </tbody>
-        </table>
-
-        <div style="float: right">
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col">#</th>
+                        <th scope="col">Media</th>
+                        <th scope="col">Product</th>
+                        <th> </th>
+                        <th scope="col">Quantity</th>
+                        <th> </th>
+                        <th scope="col">Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>VAT:</td>
-                        <td>0%</td>
-                    </tr>
-                    <tr>
-                        <td>Total:</td>
-                        <td>@cartService.GetCart().Sum(x => x.Product.Price * x.Quantity)<span> kr</span></td>
-                    </tr>
+
+                    @{
+                        int count = 1;
+
+                        foreach (var item in cartService.GetCart())
+                        {
+                            <tr>
+                                <th scope="row">@count</th>
+                                <td><img src="@item.Product.ImgUrl" alt="@item.Product.Name" class="img-fluid cartImg" /></td>
+                                <td>@item.Product.Name</td>
+                                <td>
+                                    <center>
+                                        <form asp-page-handler="DecrementItem" method="post">
+                                            <input type="hidden" value="@item.Product.Id" name="productId" />
+                                            <button class="btn-transparent">
+                                                <i class="fas fa-arrow-alt-circle-left"></i>
+                                            </button>
+                                        </form>
+                                    </center>
+                                </td>
+                                <td><center>@item.Quantity</center></td>
+                                <td>
+                                    <center>
+                                        <form asp-page-handler="AddItem" method="post">
+                                            <input type="hidden" value="@item.Product.Id" name="productId" />
+                                            <button class="btn-transparent">
+                                                <i class="fas fa-arrow-alt-circle-right"></i>
+                                            </button>
+                                        </form>
+                                    </center>
+                                </td>
+                                <td>@item.Product.Price</td>
+                            </tr>
+
+                            count++;
+                        }
+                    }
+
                 </tbody>
             </table>
+
+            <div style="float: right">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VAT:</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>Total:</td>
+                            <td>@cartService.GetCart().Sum(x => x.Product.Price * x.Quantity)<span> kr</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr />
+
+            <center>
+                <a href="/cart" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Proceed to checkout!</a>
+            </center>
+
+
+
+        }
+        else
+        {
+            <p class="text-monospace">You have no products in your cart!</p>
+        }
+
+
+        <div class="col-12" style="text-align: left; direction: ltr;">
+
+
+            <form asp-page-handler="AddOrder" method="post">
+                <div class="form-group row">
+                    <label for="name" class="col-4 col-form-label">Name</label>
+                    <div class="col-8">
+                        <input id="name" name="name" placeholder="Enter your name..." type="text" aria-describedby="nameHelpBlock" class="form-control" required="required">
+                        <span id="nameHelpBlock" class="form-text text-muted">Please write your first and last name here.</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="address" class="col-4 col-form-label">Address</label>
+                    <div class="col-8">
+                        <input id="address" name="address" placeholder="Address" type="text" aria-describedby="addressHelpBlock" required="required" class="form-control">
+                        <span id="addressHelpBlock" class="form-text text-muted">Enter your address here</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="address2" class="col-4 col-form-label">Address 2</label>
+                    <div class="col-8">
+                        <input id="address2" name="address2" placeholder="Second line of address" type="text" aria-describedby="address2HelpBlock" class="form-control">
+                        <span id="address2HelpBlock" class="form-text text-muted">(Optional)</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="district" class="col-4 col-form-label">District</label>
+                    <div class="col-8">
+                        <input id="district" name="district" placeholder="Enter your district" type="text" class="form-control" required="required">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="zip" class="col-4 col-form-label">Zip</label>
+                    <div class="col-8">
+                        <input id="zip" name="zip" placeholder="Enter the name of your city here..." type="text" class="form-control" aria-describedby="cityHelpBlock" required="required">
+                        <span id="zipHelpBlock" class="form-text text-muted">Please use the official name</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="city" class="col-4 col-form-label">City </label>
+                    <div class="col-8">
+                        <input id="city" name="city" placeholder="Enter your city code here..." type="text" class="form-control" aria-describedby="zipcodeHelpBlock" required="required">
+                        <span id="cityHelpBlock" class="form-text text-muted">Any format is accepted.</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="offset-4 col-8">
+                        <button name="submit" type="submit" class="btn btn-primary">Proceed to Payment</button>
+                    </div>
+                </div>
+            </form>
+
+
         </div>
 
-        <hr />
-
-        <center>
-            <a href="/cart" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Proceed to checkout!</a>
-        </center>
 
     }
     else
     {
-        <p class="text-monospace">You have no products in your cart!</p>
+        <h3>Order has been registered.</h3>
+        <p>Please check your order details <a href="/account/orders/details/@Model.orderSuccessId">here</a>.</p>
+
     }
+
+
+
+
+
+}
+
+
+
+
+

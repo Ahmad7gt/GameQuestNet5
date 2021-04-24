@@ -1,0 +1,24 @@
+﻿@page "{orderid}"
+@model GameQuest.Pages.Account.Orders.DetailsModel
+
+@{
+
+    if (Model._order is not null)
+    {
+        // display order 
+
+        <h1>@Model._order.CustomerName</h1>
+        <h5>@Model._order.Created</h5>
+
+
+        foreach (var item in Model._order.Products)
+        {
+            <p>@item.ProductName</p>
+        }
+    }
+    else
+    {
+        <span>Sorry, no details here...</span>
+    }
+
+}

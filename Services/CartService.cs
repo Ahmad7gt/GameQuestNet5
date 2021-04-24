@@ -8,7 +8,7 @@ public class CartService
 {
     private readonly Context _context;
 
-    private static List<CartItem> cartItems = new List<CartItem>();
+    private static List<CartItem> cartItems = new List<CartItem>();// why list
 
     public CartService(Context context)
     {
@@ -46,7 +46,7 @@ public class CartService
     }
     public void AddToCart(string productId)
     {
-        Product product = _context.Products.Where(x => x.Id == new Guid(productId)).FirstOrDefault();
+        Product product = _context.Products.Where(x => x.Id == new Guid(productId)).FirstOrDefault();  
 
         if (product is not null)
         { 
