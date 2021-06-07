@@ -13,21 +13,25 @@ namespace GameQuest.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+    
 
         private Context _context;
 
         bool isDeals = true;
+        [BindProperty]
+        public List<Product> Products { get; set; }
+
 
         public IndexModel(Context context)
         {
             _context = context;
+            Products = _context.Products.Where(x => x.Deals.Equals(true)).ToList();
         }
-        public List<Product> Products { get; set; }
+       
 
         public void OnGet()
         {
-            Products = _context.Products.Where(x => x.Deals).ToList();
+            //Products = _context.Products.Where(x => x.Deals).ToList();
 
         }
     }

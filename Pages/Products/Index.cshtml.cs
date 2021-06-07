@@ -23,6 +23,7 @@ namespace GameQuest.Products.Pages
         {
             _context = context;
             _cartService = cartService;
+          
 
         }
 

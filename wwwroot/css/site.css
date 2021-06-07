@@ -10,6 +10,20 @@
     --greyColor: #BFBFBF;
     --formBackground: #FFF;
     --orangeBorder: #FA7600;
+    /**/
+
+    --brightColor: #e5e5e5;
+    --darkColor: #282828;
+    --blueColor: #007bff;
+    --navBgColor: rgba(255,255,255,0.1);
+    --formBgColor: rgba(219, 217, 208,1);
+    --greyColor: #BFBFBF;
+    --formBackground: #FFF;
+    --blueColor1: #131626;
+    --blueColor2: #4C6873;
+    --blueColor3: #89C2D9;
+    --blueColor4: #B3E0F2;
+    --blueColor5: #D8F0F2;
 }
 
 html {
@@ -392,4 +406,257 @@ button.accept-policy {
 
 .boxwidth {
     width :460px !important;
+}
+
+
+/*.carousel-title {
+    font-size: 2rem;
+}
+
+
+    .carousel-title a {
+        color: rgba(0,0,0,8) !important;
+    }
+
+
+.carousel-p {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.carousel {
+    border-radius: 5px !important;
+}
+.carousel {
+    z-index: -100 !important;
+}*/
+
+
+.price-label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-space {
+    margin-bottom: 20px;
+}
+
+.carousel-arrows {
+    color: rgba(0, 0, 0, 0.5) !important;
+    font-size: 4rem;
+}
+
+.carousel-caption {
+    background-color: rgba(255,255,255,0.5) !important;
+    border-radius: 5px;
+    color: rgba(0,0,0,0.7) !important;
+}
+
+.carousel-backdrop {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+
+.img-ontop {
+    z-index: 999 !important;
+    position: static !important;
+    margin: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 100px 10px rgba(0,0,0,0.7);
+    border: 5px solid rgba(255,255,255,0);
+}
+
+.layerOne {
+    position: absolute;
+    width: 100% !important;
+}
+
+.layerTwo {
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    filter: brightness(200%) contrast(50%) blur(50px) saturate(100%);
+    position: relative;
+    width: 100% !important;
+    height: 550px !important;
+    display: block !important;
+}
+
+.floatLeft {
+    float: left;
+    width: 35%;
+}
+
+.floatRight {
+    float: right;
+    width: 55%;
+    left: 35%;
+}
+
+.carousel-title {
+    font-size: 2rem;
+}
+
+
+    .carousel-title a {
+        color: rgba(0,0,0,8) !important;
+    }
+
+
+.carousel-p {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.vertical-center {
+    padding-right: 50px !important;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+.carousel {
+    border-radius: 5px !important;
+}
+
+.totalPriceLabel {
+    background-color: var(--brightColor);
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+
+.cartTitle {
+    font-size: 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.cartImage {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.btn-account {
+}
+
+.menu-account {
+}
+
+.redLabel {
+    background-color: red !important;
+}
+
+    .redLabel th {
+        background-color: red !important;
+    }
+
+.logoIcon {
+    font-size: 4rem;
+    color: var(--blueColor5);
+}
+
+/* Color Theme Swatches in Hex */
+.blue-1-hex {
+    color: #47A4BF;
+}
+
+.blue-2-hex {
+    color: #2F6D7F;
+}
+
+.blue-3-hex {
+    color: #5FDBFF;
+}
+
+.blue-4-hex {
+    color: #183740;
+}
+
+.blue-5-hex {
+    color: #55C5E5;
+}
+
+/* Color Theme Swatches in RGBA */
+.blue-1 {
+    color: rgba(70, 164, 191, 1);
+}
+
+.blue-2 {
+    color: rgba(47, 109, 126, 1);
+}
+
+.blue-3 {
+    color: rgba(94, 219, 255, 1);
+}
+
+.blue-4 {
+    color: rgba(23, 55, 63, 1);
+}
+
+.blue-5 {
+    color: rgba(84, 196, 228, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.blue-1-hsla {
+    color: hsla(193, 48, 51, 1);
+}
+
+.blue-2-hsla {
+    color: hsla(193, 45, 34, 1);
+}
+
+.blue-3-hsla {
+    color: hsla(193, 100, 68, 1);
+}
+
+.blue-4-hsla {
+    color: hsla(193, 45, 17, 1);
+}
+
+.blue-5-hsla {
+    color: hsla(193, 73, 61, 1);
+}
+
+
+.adminNav {
+    background-color: var(--darkColor);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+    .adminNav a {
+        color: var(--brightColor);
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+        .adminNav a:hover {
+            color: var(--brightColor);
+            background-color: var(--navBgColor);
+        }
+
+.noHover:hover {
+    background-color: rgba(255,255,255,0) !important;
+}
+
+.table a {
+    color: var(--brightColor);
+}
+
+.modal {
+    color: var(--darkColor) !important;
+}
+
+.imageCoursel{
+    width :256px !important ;
+    height:329px !important;
 }

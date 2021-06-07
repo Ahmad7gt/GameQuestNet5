@@ -42,6 +42,7 @@ namespace GameQuest
                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
                 options.SlidingExpiration = true;
                 options.Cookie.SameSite = SameSiteMode.None;
+               
             });
 
         }

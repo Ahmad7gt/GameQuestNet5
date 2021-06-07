@@ -137,6 +137,7 @@ namespace GameQuest.Data
                 Price = 599.0,
                 CategoryId = pcGames.Id,
                 Deals = true
+                
 
 
             });
@@ -146,10 +147,11 @@ namespace GameQuest.Data
             {
                 Name = "Xbox Controller",
                 Description = "The Xbox controller is the primary game controller for Microsoft's Xbox home video game console and was introduced at the Game Developers Conference in 2000. ",
-                ImgUrl = "https://www.geeky-gadgets.com/wp-content/uploads/2018/08/Wireless-Controller-Grey-Blue-2.jpg",
+                ImgUrl = "https://mspoweruser.com/wp-content/uploads/2018/07/xbox-diamond-white-controller.jpg",
                 Price = 599.0,
                 CategoryId = xboxAccesories.Id,
-                Deals = true
+                Deals = true,
+                Sale= 20.0
 
 
 

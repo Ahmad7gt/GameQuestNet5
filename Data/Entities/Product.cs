@@ -20,6 +20,7 @@ namespace GameQuest.Data
         public Category Category { get; set; }
 
         public bool Deals { get; set; }
+       
 
         public Product()
         {
